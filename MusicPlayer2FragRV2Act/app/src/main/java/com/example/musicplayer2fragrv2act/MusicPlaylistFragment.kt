@@ -11,17 +11,18 @@ import com.example.musicplayer2fragrv2act.databinding.FragmentMusicPlaylistBindi
 class MusicPlaylistFragment : Fragment() {
 
     private lateinit var binding: FragmentMusicPlaylistBinding
+    private var songNumberCounter = 1
     private val musicPlayList = arrayListOf(
-        MusicPlaylist(1, "Blank Space", "Taylor Swift", "3:22"),
-        MusicPlaylist(2, "Watch Me", "Silento", "5:36"),
-        MusicPlaylist(3, "Earned It", "The Weekend", "4:51"),
-        MusicPlaylist(4, "The Hills", "The Weekend", "3:41"),
-        MusicPlaylist(5, "Writing's On The Wall", "Sam Smith", "5:33"),
-        MusicPlaylist(6, "You Are My Destiny", "Mirbek Atabekov", "4:00"),
-        MusicPlaylist(7, "Self Control", "Laura Branigan", "4:07"),
-        MusicPlaylist(8, "Songbird", "Kenny G", "5:05"),
-        MusicPlaylist(9, "Denzel W.", "Ulukmanapo", "3:28"),
-        MusicPlaylist(10, "Dreams", "ZHU & Nero", "3:42")
+        MusicPlaylist(getNextSongNumber(), "Blank Space", "Taylor Swift", "3:22"),
+        MusicPlaylist(getNextSongNumber(), "Watch Me", "Silento", "5:36"),
+        MusicPlaylist(getNextSongNumber(), "Earned It", "The Weekend", "4:51"),
+        MusicPlaylist(getNextSongNumber(), "The Hills", "The Weekend", "3:41"),
+        MusicPlaylist(getNextSongNumber(), "Writing's On The Wall", "Sam Smith", "5:33"),
+        MusicPlaylist(getNextSongNumber(), "You Are My Destiny", "Mirbek Atabekov", "4:00"),
+        MusicPlaylist(getNextSongNumber(), "Self Control", "Laura Branigan", "4:07"),
+        MusicPlaylist(getNextSongNumber(), "Songbird", "Kenny G", "5:05"),
+        MusicPlaylist(getNextSongNumber(), "Denzel W.", "Ulukmanapo", "3:28"),
+        MusicPlaylist(getNextSongNumber(), "Dreams", "ZHU & Nero", "3:42")
     )
 
     override fun onCreateView(
@@ -44,5 +45,9 @@ class MusicPlaylistFragment : Fragment() {
             }
         })
         binding.rvMusicPlaylist.adapter = adapter
+    }
+
+    private fun getNextSongNumber(): Int {
+        return songNumberCounter++
     }
 }
