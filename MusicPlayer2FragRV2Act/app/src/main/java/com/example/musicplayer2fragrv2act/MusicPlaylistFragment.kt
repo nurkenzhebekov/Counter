@@ -11,7 +11,7 @@ import com.example.musicplayer2fragrv2act.databinding.FragmentMusicPlaylistBindi
 class MusicPlaylistFragment : Fragment() {
 
     private lateinit var binding: FragmentMusicPlaylistBinding
-    private var songNumberCounter = 1
+    private var songNumberCounter = 1   
     private val musicPlayList = arrayListOf(
         MusicPlaylist(getNextSongNumber(), "Blank Space", "Taylor Swift", "3:22"),
         MusicPlaylist(getNextSongNumber(), "Watch Me", "Silento", "5:36"),
